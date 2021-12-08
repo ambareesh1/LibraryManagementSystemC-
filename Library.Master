@@ -1,0 +1,190 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Library.master.cs" Inherits="LibraryManagementSystem.Library" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parallax Template - Materialize</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+    <style>
+        .idCourcesFooter {
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .cardCustomization {
+            position: relative;
+            background-color: inherit;
+            border-top: 1px solid rgba(160,160,160,0.2);
+            padding: 5px 5px;
+        }
+
+        .padding-Card-Content {
+            padding: 10px;
+        }
+
+        li.selected {
+            background: rgba(255, 193, 7, 0.46);
+        }
+        select {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    height: 3rem;
+    margin-top: 2%;
+    display:none;
+}
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav style="background-color: #00BCD4">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="Login.Aspx"><i class="material-icons">power_settings_new</i></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col s8 m3 l3">
+                    <ul id="slide-out" class="side-nav fixed" style="box-shadow: 2px 2px 3px #888888;">
+                        <li>
+                            <div class="nav-head lg" style="text-align: center; font-weight: 300; font-size: larger; background: #00BCD4; color: #fff; height: 80px; line-height: 5.0;">
+                                <!-- site logo -->
+                                <a id="headerClick" class="site-logo text-uppercase" style="text-align: center; color: #fff">
+                                    <i class="Medium material-icons">local_library</i>
+                                    Library Managment System
+                                </a>
+                            </div>
+                        </li>
+                        <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="LibraryManager.aspx" aria-selected="true">
+
+                                <i class="material-icons">dashboard</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="AddCategory.aspx">
+
+                                <i class="material-icons">art_track</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Add Category</span>
+                            </a>
+                        </li>
+                         <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="AddDepartment.aspx">
+
+                                <i class="material-icons">content_copy</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Add Department</span>
+                            </a>
+                        </li>
+                        <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="AddBook.aspx">
+
+                                <i class="material-icons">library_books</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Add Book</span>
+                            </a>
+                        </li>
+                        <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="AddStudent.aspx">
+
+                                <i class="material-icons">library_add</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Add Student</span>
+                            </a>
+                        </li>
+                        
+                        
+                       
+                        <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="IssueBook.aspx">
+
+                                <i class="material-icons">exposure</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Issue Book</span>
+                            </a>
+                        </li>
+                        <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="ReturnBook.aspx">
+
+                                <i class="material-icons">repeat</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Return Book</span>
+                            </a>
+                        </li>
+                        <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="Locked.aspx">
+
+                                <i class="material-icons">lock</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Lock Account</span>
+                            </a>
+                        </li>
+                        <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="Reports.aspx">
+
+                                <i class="material-icons">insert_chart</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="active" style="background: rgba(96, 125, 139, 0.13); color: #BFC9CF; margin-top: 3%">
+                            <a href="Notifications.aspx">
+
+                                <i class="material-icons">notifications</i><span style="color: #607D8B; font-weight: bold; text-transform: uppercase" class="text">Notifications</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+        </div>
+
+
+    </form>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#slide-out li').click(function () {
+               
+                $('#slide-out li').removeClass('selected');
+                $(this).addClass('selected');
+            });
+
+
+        });
+
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+        });
+    </script>
+</body>
+</html>
